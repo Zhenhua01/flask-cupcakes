@@ -135,6 +135,8 @@ class CupcakeViewsTestCase(TestCase):
                 }
             })
             
+            #add sad route test
+            
         
     def test_delete_cupcake(self):
         with app.test_client() as client:
@@ -149,7 +151,8 @@ class CupcakeViewsTestCase(TestCase):
                 "deleted": f"{self.cupcake.id}"
             })
             
-            # self.assertEqual(Cupcake.query.count(), 1)
+            #add sad route test
+            
             
 
         
