@@ -2,7 +2,31 @@
 
 {% block content %}
 
-<h1>OUR CONTENT HERE</h1>
+<h1>Cupcakes List:</h1>
+
+<div class="cupcakes"></div>
+
+<section class="container-fluid">
+  <form id="cupcake-form">
+    <div>
+      <label for="flavor">Flavor</label>
+      <input id="flavor" type="text">
+    </div>
+    <div>
+      <label for="size">Size</label>
+      <input id="size" type="text">
+    </div>
+    <div>
+      <label for="rating">Rating</label>
+      <input id="rating" type="number">
+    </div>
+    <div>
+      <label for="image-url">Image URL</label>
+      <input id="image-url" type="URL">
+    </div>
+    <button type="submit" id="form-submit">Add Cupcake</button>
+  </form>
+</section>
 
 {% endblock %}
 
