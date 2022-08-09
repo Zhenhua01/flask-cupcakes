@@ -14,7 +14,8 @@ async function getCupcakesList() {
         method: "GET"
     })
 
-    const cupcakes = await response.data.cupcakes.map(c => new Cupcake(c));
+    const cupcakes = await response.data.cupcakes;
+    // const cupcakes = await response.data.cupcakes.map(c => new Cupcake(c));
 
     return cupcakes;
 }
@@ -54,16 +55,17 @@ async function addNewCupcake(evt) {
 
     evt.preventDefault();
 
-    const $flavor = $("#flavor").val()
-    const $size = $("#size").val()
-    const $rating = $("#rating").val()
-    const $image = $("#image-url").val()
+    
+    const flavor = $("#flavor").val()
+    const size = $("#size").val()
+    const rating = $("#rating").val()
+    const image = $("#image-url").val()
 
     const newFormVals = {
-        "flavor": $flavor,
-        "size": $size,
-        "rating": $rating,
-        "image": $image
+        flavor,
+        size,
+        rating,
+        image
     }
 
     const newCupcake = await addCupcake(newFormVals);
@@ -77,9 +79,10 @@ async function addNewCupcake(evt) {
 async function addCupcake(newFormVals) {
 
     const response = await axios({
-        url: BASE_URL, 
+        url: BASE_URL,
         method: "POST",
-        data: newFormVals});
+        data: newFormVals
+    });
 
     return new Cupcake(response.data.cupcake);
 
